@@ -14,11 +14,15 @@ for (let i = 0; i < trash.length; i++) {
   });
 }
 
-document.querySelector("input").addEventListener("change", e => {
+document.querySelector("input").addEventListener("keyup", e => {
   let liEl = document.getElementsByTagName("ul");
   let liBorn = document.createElement("li");
-  liBorn.innerHTML =
-    '<span><i class="fa fa-trash"></i></span>' + " " + e.target.value;
+  if (e.key === "Enter" && e.target.value !== "") {
+    liBorn.innerHTML =
+      '<span><i class="fa fa-trash"></i></span>' + " " + e.target.value;
+    e.target.value = "";
+  }
+
   liEl[0].appendChild(liBorn);
   const trash = document.querySelectorAll(".fa");
   console.log(trash);
