@@ -2,10 +2,33 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+const trash = document.querySelectorAll(".fa");
+console.log(trash);
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+for (let i = 0; i < trash.length; i++) {
+  console.log(trash[i]);
+  trash[i].addEventListener("click", () => {
+    let elem = trash[i].parentNode.parentNode;
+    console.log(elem);
+    elem.parentNode.removeChild(elem);
+  });
+}
+
+document.querySelector("input").addEventListener("change", e => {
+  let liEl = document.getElementsByTagName("ul");
+  let liBorn = document.createElement("li");
+  liBorn.innerHTML =
+    '<span><i class="fa fa-trash"></i></span>' + " " + e.target.value;
+  liEl[0].appendChild(liBorn);
+  const trash = document.querySelectorAll(".fa");
+  console.log(trash);
+
+  for (let i = 0; i < trash.length; i++) {
+    console.log(trash[i]);
+    trash[i].addEventListener("click", () => {
+      let elem = trash[i].parentNode.parentNode;
+      console.log(elem);
+      elem.parentNode.removeChild(elem);
+    });
+  }
+});

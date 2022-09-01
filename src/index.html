@@ -13,17 +13,23 @@
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <body>
+      <div id="container">
+        <h1 class="todo-header">To do List</h1>
+        <input id="addToDo" type="text" placeholder="Add to do here" />
+        <ul>
+          <li>
+            <span><i class="fa fa-trash"></i></span> Eat
+          </li>
+          <li>
+            <span><i class="fa fa-trash"></i></span> Drink
+          </li>
+          <li>
+            <span><i class="fa fa-trash"></i></span> Sleep
+          </li>
+        </ul>
       </div>
-    </div>
+      <script src="./index.js"></script>
+    </body>
   </body>
 </html>
